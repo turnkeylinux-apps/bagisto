@@ -1,0 +1,13 @@
+#include <turnkey/base>
+#include <turnkey/lamp>
+#include <turnkey/nodejs>
+
+python3-bcrypt
+
+php-curl
+php-json
+php-mbstring
+php-gd
+php-zip
+php-xml
+php-intl

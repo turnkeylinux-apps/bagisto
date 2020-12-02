@@ -1,0 +1,14 @@
+turnkey-bagisto-16.0 (1) turnkey; urgency=low
+
+  * Initial release includes Bagisto - v1.2.0; installed from tarball;
+    based on TurnKey LAMP with NodeJS.
+
+  * SSL/TLS cyphers to provide "Intermediate" browser/client support
+    (suitable for "General-purpose servers with a variety of clients,
+    recommended for almost all systems"). As provided by Mozilla via
+    https://ssl-config.mozilla.org/.
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Wed, 02 Dec 2020 14:48:47 +1100
