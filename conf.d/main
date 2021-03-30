@@ -27,9 +27,8 @@ mysqladmin create $DB_NAME
 mysql --batch --execute "grant all privileges on $DB_NAME.* to $DB_USER@localhost identified by '$DB_PASS'; flush privileges;"
 
 cd $WEBROOT
-echo yes | composer install --no-dev --prefer-source || true
-# work around error thrown re barryvdh/laravel-debugbar
-echo yes | composer remove vendor/barryvdh/laravel-debugbar
+chown -R www-data:www-data $WEBROOT
+turnkey-composer install --no-dev --prefer-source || true
 tkl-composer-squash-vendor
 
 [[ ! -f "$CONF" ]] && cp $CONF.example $CONF
@@ -44,6 +43,7 @@ sed -i "\|MAIL_HOST=|s|=.*|=localhost|" $CONF
 sed -i "\|MAIL_FROM_ADDR=|s|=.*|=$ADMIN_MAIL|" $CONF
 sed -i "\|MAIL_REPLYTO_ADDR=|s|=.*|=$ADMIN_MAIL|" $CONF
 
+chown www-data:www-data $CONF
 cd $WEBROOT
 echo yes | php artisan bagisto:install
 
