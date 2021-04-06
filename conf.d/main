@@ -26,10 +26,12 @@ service mysql start
 mysqladmin create $DB_NAME
 mysql --batch --execute "grant all privileges on $DB_NAME.* to $DB_USER@localhost identified by '$DB_PASS'; flush privileges;"
 
+# Ensure that turnkey-artisan knows where webroot is
+sed -i "\|^export WEBROOT| s|=.*|="$WEBROOT"|" /usr/local/bin/turnkey-artisan
+
 cd $WEBROOT
-echo yes | composer install --no-dev --prefer-source || true
-# work around error thrown re barryvdh/laravel-debugbar
-echo yes | composer remove vendor/barryvdh/laravel-debugbar
+chown -R www-data:www-data $WEBROOT
+turnkey-composer install --no-dev --prefer-source || true
 tkl-composer-squash-vendor
 
 [[ ! -f "$CONF" ]] && cp $CONF.example $CONF
@@ -44,17 +46,15 @@ sed -i "\|MAIL_HOST=|s|=.*|=localhost|" $CONF
 sed -i "\|MAIL_FROM_ADDR=|s|=.*|=$ADMIN_MAIL|" $CONF
 sed -i "\|MAIL_REPLYTO_ADDR=|s|=.*|=$ADMIN_MAIL|" $CONF
 
-cd $WEBROOT
-echo yes | php artisan bagisto:install
+chown www-data:www-data $CONF
+echo 0 | turnkey-artisan bagisto:install
 
 mysql --batch --execute "update bagisto.admins set name='$ADMIN_USER' where id='1';"
 /usr/lib/inithooks/bin/bagisto.py --email="$ADMIN_MAIL" --pass="$ADMIN_PASS"
 
-php $WEBROOT/artisan config:cache
-php $WEBROOT/artisan key:generate --force
-php $WEBROOT/artisan config:clear
-
-chown -R www-data:www-data $WEBROOT
+turnkey-artisan config:cache
+turnkey-artisan key:generate --force
+turnkey-artisan config:clear
 
 a2dissite 000-default
 a2ensite bagisto

@@ -1,3 +1,21 @@
+turnkey-bagisto-16.1 (1) turnkey; urgency=low
+
+  * Update Bagisto to latest upstream stable - v1.3.1.
+
+  * Include 'turnkey-composer' wrapper script - runs composer as www-data
+    user. Makes it easy to not run composer as root - part of #1539.
+
+  * Explicitly install composer (rather than automatically include in all LAMP
+    based appliances) - part of #1563.
+
+  * Include 'turnkey-artisan' wrapper script - runs 'php artisan' as www-data
+    user.
+
+  * Note: Please refer to turnkey-core's 16.1 changelog for changes common to
+    all appliances. Here we only describe changes specific to this appliance.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Tue, 30 Mar 2021 12:05:21 +1100
+
 turnkey-bagisto-16.0 (1) turnkey; urgency=low
 
   * Initial release includes Bagisto - v1.2.0; installed from tarball;
