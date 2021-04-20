@@ -14,6 +14,13 @@ consult the `developer docs`_ and `develop your own`_.
 This TurnKey appliance also includes all the standard features in
 `TurnKey Core`_, and on top of that:
 
+- Bagisto:
+
+  - Latest Bagisto release installed via source tarball to /var/www/bagisto,
+    dependencies installed via composer_.
+  - Includes turnkey-composer_ and turnkey-artisan_ (wrapper scripts which
+    run composer_ and artisan_ respectively; as www-data user).
+
 - SSL support out of the box.
 - `Adminer`_ administration frontend for MySQL (MariaDB) (listening on port
   12322 - uses SSL).
@@ -34,5 +41,9 @@ Credentials *(passwords set at first boot)*
 .. _developer docs: https://devdocs.bagisto.com/
 .. _develop your own: https://bagisto.com/en/step-by-step-guide-for-bagisto-module-development/
 .. _TurnKey Core: https://www.turnkeylinux.org/core
+.. _composer: https://getcomposer.org/
+.. _turnkey-composer: https://github.com/turnkeylinux/common/blob/master/overlays/composer/usr/local/bin/turnkey-composer
+.. _artisan: https://laravel.com/docs/artisan
+.. _turnkey-artisan: https://github.com/turnkeylinux/common/blob/master/overlays/artisan/usr/local/bin/turnkey-artisan
 .. _Adminer: https://www.adminer.org/
 .. _Postfix: https://www.postfix.org/
