@@ -1,8 +1,11 @@
 #include <turnkey/base>
 #include <turnkey/lamp>
-#include <turnkey/nodejs>
 
 python3-bcrypt
+
+build-essential
+ca-certificates
+openssl
 
 php-curl
 php-json
