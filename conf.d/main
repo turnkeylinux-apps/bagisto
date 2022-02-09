@@ -57,7 +57,9 @@ turnkey-artisan key:generate --force
 turnkey-artisan config:clear
 
 a2dissite 000-default
+a2enmod headers
 a2ensite bagisto
+
 a2enmod rewrite
 
 service mysql stop
