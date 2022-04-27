@@ -4,8 +4,6 @@
 python3-bcrypt
 
 build-essential
-ca-certificates
-openssl
 
 php-curl
 php-json
