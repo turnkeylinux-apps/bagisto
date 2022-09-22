@@ -9,8 +9,8 @@ Option:
 import sys
 import getopt
 import bcrypt
-from mysqlconf import MySQL
 
+from mysqlconf import MySQL
 from libinithooks.dialog_wrapper import Dialog
 from libinithooks import inithooks_cache
 
