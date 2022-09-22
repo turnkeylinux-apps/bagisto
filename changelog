@@ -1,12 +1,18 @@
 turnkey-bagisto-17.0 (1) turnkey; urgency=low
 
+  * Updating Bagisto appliance and its dependencies to v17.0. 
+
+  * Forcing appliance to use sury.org repo instead of Debian.
+
+  * Installing php packages with version 8.1.
+
   * Update Bagisto to latest upstream stable - v1.3.2.
+    [Zhenya Hvorostian <zhenya@turnkeylinux.org>]
 
   * Note: Please refer to turnkey-core's 17.0 changelog for changes common to
     all appliances. Here we only describe changes specific to this appliance.
-
- -- Zhenya Hvorostian <zhenya@turnkeylinux.org>  Wed, 09 Feb 2022 22:55:55 +0300
-
+ 
+-- Mattie Darden <mattie@turnkeylinux.org>  Thu, 22 Sep 2022 18:41:52 -0400
 
 turnkey-bagisto-16.1 (1) turnkey; urgency=low
 
