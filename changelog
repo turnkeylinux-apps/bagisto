@@ -5,6 +5,10 @@ turnkey-bagisto-17.0 (1) turnkey; urgency=low
   * Forcing appliance to use sury.org repo instead of Debian.
 
   * Installing php packages with version 8.1, included "extra pins" in Makefile.
+  
+  * Implementing services.txt file to update admin login page for appliance.
+  
+  * Including login page url in ReadMe.rst file.
 
   * Update Bagisto to latest upstream stable - v1.3.2.
     [Zhenya Hvorostian <zhenya@turnkeylinux.org>]
