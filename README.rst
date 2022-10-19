@@ -35,6 +35,7 @@ Credentials *(passwords set at first boot)*
 -  Adminer: username **adminer**
 
 -  Bagisto: username is email - set at firstboot
+   Login at http://<Bagisto_IP>/admin/login
 
 .. _Bagisto: https://bagisto.com/en/
 .. _extensions: https://bagisto.com/en/extensions/
