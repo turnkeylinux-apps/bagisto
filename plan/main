@@ -1,14 +1,14 @@
 #include <turnkey/base>
-#include <turnkey/lamp81>
+#include <turnkey/lamp>
 
 python3-bcrypt
 
 build-essential
 
 php-json
-php8.1-curl
-php8.1-mbstring
-php8.1-gd
-php8.1-zip
-php8.1-xml
-php8.1-intl
+php-curl
+php-mbstring
+php-gd
+php-zip
+php-xml
+php-intl
